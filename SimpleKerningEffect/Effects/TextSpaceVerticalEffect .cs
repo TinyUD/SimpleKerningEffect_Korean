@@ -8,7 +8,7 @@ using YukkuriMovieMaker.Plugin.Effects;
 
 namespace SimpleKerningEffect.Effects
 {
-    [VideoEffect("글자 간격 조정(세로)", ["tetra_te"], ["kerning", "글자", "tetra_te", "텍스트", "text", "플러그인", "plugin"], isAviUtlSupported: false, isEffectItemSupported: false)]
+    [VideoEffect("글자 간격 조정(세로쓰기)", ["텍스트"], ["kerning", "글자", "텍스트", "text", "플러그인", "plugin"], isAviUtlSupported: false, isEffectItemSupported: false)]
     internal class TextSpaceVerticalEffect : VideoEffectBase
     {
         public override string Label => $"글자 간격 조정 (세로) {Space.GetValue(0, 1, 30):F1}";

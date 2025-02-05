@@ -8,7 +8,7 @@ using YukkuriMovieMaker.Plugin.Effects;
 
 namespace SimpleKerningEffect.Effects
 {
-    [VideoEffect("간단 커닝", ["tetra_te"], ["kerning", "문자", "tetra_te","텍스트", "text", "플러그인", "plugin"], isAviUtlSupported: false, isEffectItemSupported: false)]
+    [VideoEffect("간단 커닝", ["텍스트"], ["kerning", "문자", "텍스트", "text", "플러그인", "plugin"], isAviUtlSupported: false, isEffectItemSupported: false)]
     internal class SimpleKerningEffect : VideoEffectBase
     {
         public override string Label => "간단 커닝";
