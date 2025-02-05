@@ -8,46 +8,46 @@ using YukkuriMovieMaker.Plugin.Effects;
 
 namespace SimpleKerningEffect.Effects
 {
-    [VideoEffect("簡易カーニング", ["テキスト"], ["kerning", "文字", "テキスト", "text", "プラグイン", "plugin"], isAviUtlSupported:false, isEffectItemSupported:false)]
+    [VideoEffect("간단 커닝", ["tetra_te"], ["kerning", "문자", "tetra_te","텍스트", "text", "플러그인", "plugin"], isAviUtlSupported: false, isEffectItemSupported: false)]
     internal class SimpleKerningEffect : VideoEffectBase
     {
-        public override string Label => "簡易カーニング";
+        public override string Label => "간단 커닝";
 
-        [Display(GroupName = "簡易カーニング\r\n対象の文字位置を数字で指定します\r\nカンマで複数指定、ハイフンで範囲指定", Name = "文字位置", Description = "何文字目を対象にするか設定します\r\n例：1,3,5-10")]
+        [Display(GroupName = "간단 커닝\r\n대상 문자 위치를 숫자로 지정합니다\r\n쉼표(,)로 여러 개 지정, 하이픈(-)으로 범위 지정", Name = "문자 위치", Description = "몇 번째 문자를 대상으로 할지 설정합니다\r\n예: 1,3,5-10")]
         [TextEditor(AcceptsReturn = true)]
         public string Index { get => index; set => Set(ref index, value); }
         string index = string.Empty;
 
-        [Display(GroupName = "描画", Name = "X", Description = "描画位置（横方向）")]
+        [Display(GroupName = "그리기", Name = "X", Description = "그리기 위치(가로 방향)")]
         [AnimationSlider("F1", "px", -500, 500)]
         public Animation X { get; } = new Animation(0, -99999, 99999);
 
-        [Display(GroupName = "描画", Name = "Y", Description = "描画位置（縦方向）")]
+        [Display(GroupName = "그리기", Name = "Y", Description = "그리기 위치(세로 방향)")]
         [AnimationSlider("F1", "px", -500, 500)]
         public Animation Y { get; } = new Animation(0, -99999, 99999);
 
-        [Display(GroupName = "描画", Name = "Z", Description = "描画位置（奥行き）")]
+        [Display(GroupName = "그리기", Name = "Z", Description = "그리기 위치(깊이 방향)")]
         [AnimationSlider("F1", "px", -500, 500)]
         public Animation Z { get; } = new Animation(0, -99999, 99999);
 
-        [Display(GroupName = "描画", Name = "不透明度", Description = "不透明度")]
+        [Display(GroupName = "그리기", Name = "불투명도", Description = "불투명도")]
         [AnimationSlider("F1", "%", 0, 100)]
         public Animation Opacity { get; } = new Animation(100, 0, 100);
 
-        [Display(GroupName = "描画", Name = "拡大率", Description = "拡大率")]
+        [Display(GroupName = "그리기", Name = "확대/축소", Description = "확대/축소")]
         [AnimationSlider("F1", "%", 0, 400)]
         public Animation Zoom { get; } = new Animation(100, 0, 5000);
 
-        [Display(GroupName = "描画", Name = "回転角", Description = "回転させる角度（右回り）")]
+        [Display(GroupName = "그리기", Name = "회전 각도", Description = "회전 각도(오른쪽 방향)")]
         [AnimationSlider("F1", "°", -360, 360)]
         public Animation Rotation { get; } = new Animation(0, -36000, 36000);
 
-        [Display(GroupName = "描画", Name = "左右反転", Description = "左右反転")]
+        [Display(GroupName = "그리기", Name = "좌우 반전", Description = "좌우 반전")]
         [ToggleSlider]
         public bool Invert { get => invert; set => Set(ref invert, value); }
         bool invert = false;
 
-        [Display(GroupName = "簡易カーニング内のエフェクト", Name = "", Description = "対象文字にかける映像エフェクト")]
+        [Display(GroupName = "간단 커닝 내 효과", Name = "", Description = "대상 문자에 적용할 비디오 효과")]
         [VideoEffectSelector(PropertyEditorSize = PropertyEditorSize.FullWidth)]
         public ImmutableList<IVideoEffect> Effects { get => effects; set => Set(ref effects, value); }
         ImmutableList<IVideoEffect> effects = [];

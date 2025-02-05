@@ -8,30 +8,30 @@ using YukkuriMovieMaker.Plugin.Effects;
 
 namespace SimpleKerningEffect.Effects
 {
-    [VideoEffect("文字間隔調整（横書）", ["テキスト"], ["kerning", "文字", "テキスト", "text", "プラグイン", "plugin"], isAviUtlSupported:false, isEffectItemSupported:false)]
+    [VideoEffect("글자 간격 조정(가로쓰기)", ["tetra_te"], ["kerning", "글자", "tetra_te", "텍스트", "text", "플러그인", "plugin"], isAviUtlSupported: false, isEffectItemSupported: false)]
     internal class TextSpaceBesideEffect : VideoEffectBase
     {
-        public override string Label => $"文字間隔調整（横書） {Space.GetValue(0, 1, 30):F1}";
+        public override string Label => $"글자 간격 조정(가로쓰기) {Space.GetValue(0, 1, 30):F1}";
 
-        [Display(GroupName = "文字間隔調整（横書）", Name = "開始", Description = "調整する文字の開始位置")]
+        [Display(GroupName = "글자 간격 조정(가로쓰기)", Name = "시작", Description = "조정할 글자의 시작 위치")]
         [TextBoxSlider("F0", "", 1, 5)]
         [DefaultValue(1d)]
         [Range(1, 99999)]
         public double Start { get => start; set => Set(ref start, value); }
         double start = 1;
-        
-        [Display(GroupName = "文字間隔調整（横書）", Name = "終了", Description = "調整する文字の終了位置")]
+
+        [Display(GroupName = "글자 간격 조정(가로쓰기)", Name = "종료", Description = "조정할 글자의 종료 위치")]
         [TextBoxSlider("F0", "", 1, 5)]
         [DefaultValue(1d)]
         [Range(1, 99999)]
         public double End { get => end; set => Set(ref end, value); }
         double end = 1;
 
-        [Display(GroupName = "文字間隔調整（横書）", Name = "文字間隔", Description = "文字間隔")]
+        [Display(GroupName = "글자 간격 조정(가로쓰기)", Name = "글자 간격", Description = "글자 간격")]
         [AnimationSlider("F1", "", -50, 50)]
         public Animation Space { get; } = new Animation(0, -99999, 99999);
-        
-        [Display(GroupName = "文字間隔調整（横書）", Name = "全体を調整", Description = "範囲外の文字の位置を調整する")]
+
+        [Display(GroupName = "글자 간격 조정쓰기(가로)", Name = "전체 조정", Description = "범위 밖의 글자 위치를 조정합니다.")]
         [ToggleSlider]
         public bool Adjust { get => adjust; set => Set(ref adjust, value); }
         bool adjust = true;
