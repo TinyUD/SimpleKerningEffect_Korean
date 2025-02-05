@@ -10,7 +10,7 @@ YYM4のプラグインのローカライズ方法を正確に知らないため�
 텍스트의 그리기 위치나 확대율 등을 문자마다 조정하는 영상 효과 플러그인입니다.
 또한 문자마다 영상 효과를 적용하는 기능을 제공합니다.
 ## 설치 방법
-[Releases](https://github.com/tetra-te/SimpleKerningEffect/releases/latest)에서 ymmp 파일을 다운로드하십시오.
+[Releases](https://github.com/TinyUD/SimpleKerningEffect_Korean/releases/latest)에서 ymmp 파일을 다운로드하십시오.
 
 다운로드한 파일을 더블 클릭하여 표시되는 화면에 따라 설치하십시오.
 ### 더블 클릭해도 설치할 수 없는 경우
